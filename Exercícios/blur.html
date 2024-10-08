@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validação de Campo</title>
+  </head>
+  <body>
+    <input type="text" id="meuInput" placeholder="Digite algo..." />
+    <div id="mensagem"></div>
+
+    <script>
+      document.getElementById("meuInput").addEventListener("blur", function () {
+        const valor = this.value.trim();
+        const mensagemDiv = document.getElementById("mensagem");
+
+        if (valor === "") {
+          mensagemDiv.textContent = "Erro: O campo não pode estar vazio!";
+          mensagemDiv.style.color = "red";
+        } else {
+          mensagemDiv.textContent = "Sucesso: Você digitou algo!";
+          mensagemDiv.style.color = "green";
+        }
+      });
+    </script>
+  </body>
+</html>
